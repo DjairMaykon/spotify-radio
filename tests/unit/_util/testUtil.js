@@ -32,14 +32,14 @@ import {
   
     static defaultHandleParams() {
       const requestStream = TestUtil.generateReadableStream(['body da requisicao'])
-      const response = TestUtil.generateWritableStream(() => {})
+      const responseStream = TestUtil.generateWritableStream(() => {})
       const data = {
         request: Object.assign(requestStream, {
           headers: {},
           method: '',
           url: ''
         }),
-        response: Object.assign(response, {
+        response: Object.assign(responseStream, {
           writeHead: jest.fn(),
           end: jest.fn()
         })
